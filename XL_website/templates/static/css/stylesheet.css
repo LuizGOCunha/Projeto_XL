@@ -67,3 +67,23 @@ nav a {
     position: relative;
     font-size: 30px;
 }
+
+nav a:hover {
+    color:#ffff00;
+}
+
+nav a:hover li {
+    color:#ffff00;
+}
+
+nav a:active{
+    color:#ffff00;
+    font-weight: bold;
+    font-size:28px;
+}
+
+/*
+É possível alterar outro elemento através do hover ou active usando:
+tag1:hover tag2{
+}
+*/
