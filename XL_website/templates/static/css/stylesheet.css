@@ -1,5 +1,5 @@
 header {
-    background: #ffffff;
+    background-color: #cccccc;
 }
 
 a {
@@ -10,7 +10,7 @@ h1 {
     font-size: 50px
 }
 body {
-    background: #999999;
+    background: #ffffff;
 }
 /*
 nav {
@@ -26,6 +26,10 @@ nav {
     padding: 1px;
 }
 
+.listanav {
+
+}
+
 .listra {
     background: #ee7b00;
 }
@@ -35,7 +39,7 @@ nav {
 }
 
 .conteudo {
-    background: #999999;
+    background: #ffffff;
     width: 70%;
     margin-top: 60px;
     margin-left: 50px;
