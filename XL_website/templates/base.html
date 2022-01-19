@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>XL Construções</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="icon" href="{% static 'media/XL.ico' %}">
+    <script src="{% static 'css/bootstrap/js/bootstrap.min.js' %}"></script>
+</head>
+
+<body>
+    <header>
+    <div style="background-color: #CCCCCC;">
+        <a href="/"><img src="{% static 'media/XL_logo.png' %}" class="img-fluid"  alt="logo XL"><br/></a>
+        <br/>
+        <br/>
+       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #CCCCCC;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="margin-right: 30px;">Página principal</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/sobre">Sobre Nós</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/projetos">Projetos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contato">Contatos</a>
+        </li>
+      </ul>
+      <span class="navbar-text" style="margin-right: 30px; font-size:17px; font-style: italic;">
+          Dia a dia construindo o Ceará
+        </span>
+      </div>
+    </div>
+</nav>
+  </div>
+    </header>
+{% block content %}
+
+{% endblock %}
+<footer>
+    <div style="background-color: orange; padding:2%;">
+        <img src="{% static 'media/XL_logo_simples_II.png' %}" class="rounded mx-auto d-block" style="width:10%;" alt="logo XL">
+    </div>
+</footer>
+</body>
+</html>
