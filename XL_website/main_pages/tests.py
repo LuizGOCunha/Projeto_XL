@@ -1,3 +1,4 @@
+from dis import Bytecode
 from django.test import TestCase, RequestFactory
 from django.test import LiveServerTestCase
 from selenium import webdriver
@@ -16,6 +17,44 @@ class XLTestCase(LiveServerTestCase):
         self.browser.get(self.live_server_url + '/sobre')
         self.browser.get(self.live_server_url + '/contato')  
         self.browser.get(self.live_server_url + '/projetos')
+
+    def test_para_verificar_o_texto_do_site(self):
+        """Esse teste verifica se os textos da página principal estão corretos"""
+        self.browser.get(self.live_server_url)
+        titulo = self.browser.find_element_by_css_selector('h1')
+        lema = self.browser.find_element_by_css_selector('.navbar-text')
+        self.assertEqual('Sobre a empresa', titulo.text)
+        self.assertEqual('Dia a dia construindo o Ceará', lema.text)
+
+    def test_para_verificar_se_os_botoes_estao_corretos(self):
+        """Esse teste verifica se os nossos botões tem o texto correto e se seus links carregam"""
+        self.browser.get(self.live_server_url)
+        home = self.browser.find_element_by_css_selector('#botao_home')
+        sobre = self.browser.find_element_by_css_selector('#botao_sobre')
+        projetos = self.browser.find_element_by_css_selector('#botao_projetos')
+        contato = self.browser.find_element_by_css_selector('#botao_contato')
+        self.assertEqual(home.text, 'Página principal')
+        self.assertEqual(sobre.text, 'Sobre Nós')
+        self.assertEqual(projetos.text, 'Projetos')
+        self.assertEqual(contato.text, 'Contatos')
+        home.click()
+        self.browser.find_element_by_css_selector('#botao_sobre').click()
+        self.browser.find_element_by_css_selector('#botao_projetos').click()
+        self.browser.find_element_by_css_selector('#botao_contato').click()
+        # Você pode me perguntar "Você reutilizou o elemento home, por que não reutilizou os outros?"
+        # A resposta é simples:
+        # Quando você busca o primeiro link (home), ele está utilizável, mas no momento em que se vai para
+        # outra página, todos os outros links anteriores se perdem, diante do fato de que atualizamos
+        # o endereço.
+        # Por isso, ao invés de tentarmos puxar um elemento anteriormente encontrado e agora perdido (O que
+        # ergueria uma excessão), simplesmente pedimos para o selenium procurar um novo elemento na nova
+        # página.
+
+        
+
+        
+
+        
            
         
   

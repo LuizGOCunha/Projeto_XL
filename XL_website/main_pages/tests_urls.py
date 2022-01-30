@@ -22,6 +22,7 @@ class XLTestCaseURLS(TestCase):
     def test_para_saber_se_a_rota_contato_usa_o_template_correto(self):
         """Esse teste cria um objeto request para testar se o view contato está utilizando o
            template de nome contato.html"""
+        # Ainda não sei o motivo pelo qual essa string do get abaixo pode ser qualquer coisa
         request = self.factory.get('')
         with self.assertTemplateUsed('contato.html'):
             response = views.contato(request)
